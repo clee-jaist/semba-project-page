@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEMBA: Shortcut-Enhanced Multimodal Backdoor Attack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/external/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #ffffff;
+            --section-bg: #f8f9fa;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 5rem 5rem 2.0rem;
+            text-align: center;
+            background: var(--bg-color);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .authors {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #222;
+        }
+
+        .authors a {
+            color: #3F72AF;
+            text-decoration: none;
+        }
+
+        .affiliation {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background: var(--accent-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+
+        }
+
+        .abstract {
+            font-size: 1.05rem;
+            text-align: justify;
+            background: #fdfdfd;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Figure Placeholders */
+        .figure {
+            text-align: center;
+            padding: 10px 10px;
+            border-radius: 8px;
+        }
+
+        .figure img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .caption {
+            font-size: 0.9rem;
+            color: #333;
+            margin-top: 10px;
+            padding: 0 20px;
+        }
+
+        /* Video */
+        .video-grid {
+            margin: 20px 0;
+        }
+
+        .video-item {
+            margin-bottom: 20px;
+        }
+
+        .video-item video {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .video-item.caption {
+            font-size: 0.9em;
+            text-align: justify;
+            color: #333;
+<!--            padding: 20px;-->
+        }
+
+        /* Math & Code */
+        .math-block {
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        /* Table Style */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--section-bg);
+        }
+
+        /* BibTeX */
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: var(--section-bg);
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            header {
+                padding: 3rem 2rem 2rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Shortcut-Enhanced Multimodal Backdoor Attack in Vision-guided Robot Grasping</h1>
+    <p class="authors">
+        <a href="https://clee-jaist.github.io/" target="_blank">Chenghao Li</a>,
+        <a href="https://scholar.google.com/citations?user=c_62MhUAAAAJ&hl=en" target="_blank">Ziyan Gao</a>,
+        <a href="https://fp.jaist.ac.jp/public/Default2.aspx?id=352&l=1" target="_blank">Nak Young Chong</a>
+    </p>
+    <p class="affiliation" style="margin-top: 0;">Japan Advanced Institute of Science and Technology (JAIST)</p>
+
+    <div class="links">
+        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11082295" target="_blank" rel="noopener noreferrer" class="btn">📄 Paper</a>
+        <a href="https://www.youtube.com/watch?v=Q5-sVF9LrMQ" target="_blank" rel="noopener noreferrer" class="btn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 4px;">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+            </svg>
+            Video
+        </a>
+    </div>
+
+</header>
+
+<div class="container">
+
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <div class="abstract">
+            Integrating the Artificial Intelligence (AI) vision module into the robot grasping system can significantly improve its generalizability, thereby enhancing the efficiency of Human-Robot Interaction (HRI). However, the inherent lack of interpretability in AI also opens the gate to external threats. In this work, we reveal a novel safety risk in this vision-guided robot grasping system by proposing the <strong style="color: #2c3e50;">Shortcut-enhanced Multimodal Backdoor Attack (SEMBA)</strong>, which can manipulate the grasp quality score using the backdoor trigger leading to a misguided grasping sequence. The SEMBA may thus cause potentially hazardous grasping and pose a threat to human safety in HRI. Specifically, we initially present the <strong style="color: #2c3e50;">Multimodal Shortcut Searching Algorithm (MSSA)</strong> to find the pixel value that deviates the most from the mean and standard deviation of the multimodal dataset, along with the pivotal pixel position for individual images. This will guarantee that the proposed attack is effective in complex, multi-class object scenarios. Next, based on MSSA, we devise the <strong style="color: #2c3e50;">Multimodal Trigger Generator (MTG)</strong> to create diverse multimodal backdoor triggers and integrate them into the dataset, ensuring that our attack has the multimodality attribute. We conduct extensive experiments on the benchmark datasets and a cobot, showing the effectiveness of the proposed method both in the digital and physical worlds.
+        </div>
+
+    </section>
+
+    <section id="highlights">
+        <h2>Highlights</h2>
+        <div class="abstract">
+            This work presents a novel backdoor attack that exposes previously <strong style="color: #2c3e50;">unexplored safety risks in vision-guided robot grasping</strong>. To the best of our knowledge, this is <strong style="color: #2c3e50;">the first study to introduce backdoor attacks in robot grasping systems</strong>, demonstrating how maliciously manipulated visual grasping models can <strong style="color: #2c3e50;">alter grasping sequences</strong> and induce <strong style="color: #2c3e50;">hazardous behaviors</strong>.
+        </div>
+
+        <div class="figure">
+            <img src="semba_pipeline.png" alt="SEMBA Pipeline">
+            <p class="caption">The pipeline of SEMBA: dataset defect discovery (MSSA) → trigger generation and injection (MTG) → compromised grasp detection model → trigger-activated grasp detection → hazardous grasping in HRI.</p>
+        </div>
+    </section>
+
+    <section id="results1">
+        <h2>Results - Attacking Grasp Detection</h2>
+        <div class="video-grid">
+<!--            <div class="video-item caption">-->
+<!--                When PQGD is not applied, AQP shows limited effectiveness due to its poor adaptability to variations in hand shape, thus hard to realize safe grasping in human-robot interaction.-->
+<!--            </div>-->
+            <div class="video-item">
+                <video controls autoplay muted loop style="width: 100%; height: auto; display: block; margin: 0 auto;">
+                    <source src="videos/shortcut_position.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-item">
+                    <video controls autoplay muted loop style="width: 100%; height: auto; display: block; margin: 0 auto;">
+                        <source src="videos/shortcut_value.mp4" type="video/mp4">
+                    </video>
+            </div>
+
+            <div class="video-item">
+                    <video controls autoplay muted loop style="width: 100%; height: auto; display: block; margin: 0 auto;">
+                        <source src="videos/cornell_ocid.mp4" type="video/mp4">
+                    </video>
+            </div>
+
+            <div class="video-item">
+                    <video controls autoplay muted loop style="width: 92%; height: auto; display: block; margin: 0 auto;">
+                        <source src="videos/OCID.mp4" type="video/mp4">
+                    </video>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="results2">
+        <h2>Results - Attacking Robot Grasping</h2>
+        <div class="video-grid">
+<!--            <div class="video-item caption">-->
+<!--                When PQGD is not applied, AQP shows limited effectiveness due to its poor adaptability to variations in hand shape, thus hard to realize safe grasping in human-robot interaction.-->
+<!--            </div>-->
+            <div class="video-item">
+                <video controls autoplay muted loop style="width: 85%; height: auto; display: block; margin: 0 auto;">
+                    <source src="videos/grasping.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section id="results3">
+        <h2>Results - Handover Cases</h2>
+        <div class="video-grid">
+<!--            <div class="video-item caption">-->
+<!--                When PQGD is not applied, AQP shows limited effectiveness due to its poor adaptability to variations in hand shape, thus hard to realize safe grasping in human-robot interaction.-->
+<!--            </div>-->
+            <div class="video-item">
+                <video controls autoplay muted loop style="width: 85%; height: auto; display: block; margin: 0 auto;">
+                    <source src="videos/handover.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="bibtex">
+        <h2>BibTeX</h2>
+        <pre>@article{li2025semba,
+  title={Shortcut-Enhanced Multimodal Backdoor Attack in Vision-guided Robot Grasping},
+  author={Chenghao Li, Ziyan Gao, and Nak Young Chong},
+  journal={IEEE Transactions on Automation Science and Engineering},
+  year={2025}
+}</pre>
+    </section>
+
+</div>
+
+<footer>
+    <p>
+  &copy; 2026
+  <a href="https://www.jaist.ac.jp/robot/" target="_blank" style="color: inherit; text-decoration: none;">
+    Intelligent Robotic Laboratory of JAIST
+  </a>.
+  All Rights Reserved.
+</p>
+</footer>
+
+</body>
+</html>
